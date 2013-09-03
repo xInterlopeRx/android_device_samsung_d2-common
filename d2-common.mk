@@ -30,7 +30,7 @@ endif
 
 # Boot animation
 
-ifeq ($(filter apexqtmo expressatt,$(VARIENT_MODEL)),)
+ifeq ($(filter apexqtmo expressatt goghspr,$(VARIENT_MODEL)),)
 ## merge colusion
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
@@ -166,7 +166,7 @@ PRODUCT_COPY_FILES += \
 # common msm8960
 $(call inherit-product, device/samsung/msm8960-common/msm8960.mk)
 
-ifeq ($(filter apexqtmo expressatt,$(VARIENT_MODEL)),)
+ifeq ($(filter apexqtmo expressatt goghspr,$(VARIENT_MODEL)),)
     $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 else
     $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)

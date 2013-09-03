@@ -1,4 +1,4 @@
-# Currently only for apexqtmo and expressatt
+# Currently only for apexqtmo expressatt and goghspr
 ifeq ($(TARGET_PROVIDES_CAMERA_HAL),true)
 
 LOCAL_PATH := $(call my-dir)

@@ -306,7 +306,7 @@ int camera_cancel_auto_focus(struct camera_device * device)
     if(!device)
         return -EINVAL;
 
-    /* APEXQ/EXPRESS: Calling cancel_auto_focus causes the camera to crash for unknown reasons. Disabling
+    /* APEXQ/EXPRESS/GOGHSRP: Calling cancel_auto_focus causes the camera to crash for unknown reasons. Disabling
      * it has no adverse effect. Return 0 */
     return 0;// VENDOR_CALL(device, cancel_auto_focus);
 }
