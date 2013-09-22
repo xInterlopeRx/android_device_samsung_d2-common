@@ -1,0 +1,4 @@
+#!/system/bin/sh
+
+echo "8791 1420 4 705 11187 238 -1491 925 10193" > /sys/class/input/input3/static_matrix
+
