@@ -1,45 +1,53 @@
 #!/system/bin/sh
 
-# accelerometer
+# fsa9485 /devices/platform/i2c-gpio.11/i2c-11/11-0025/input/input1
+chown system.input /sys/class/input/input1/enable
+chown system.input /sys/class/input/input1/delay
+chown system.input /sys/class/input/input1/wake
+
+# accelerometer /devices/virtual/input/input2
+chown system.input /sys/class/input/input2/data
+chown system.input /sys/class/input/input2/delay
+chown system.input /sys/class/input/input2/enable
+chown system.input /sys/class/input/input2/filter_enable
+chown system.input /sys/class/input/input2/offset
+chown system.input /sys/class/input/input2/position
+chown system.input /sys/class/input/input2/threshold
+chown system.input /sys/class/input/input2/wake
+
+# geomagnetic /devices/i2c-12/12-002e/input/input3
 chown system.input /sys/class/input/input3/data
 chown system.input /sys/class/input/input3/delay
 chown system.input /sys/class/input/input3/enable
 chown system.input /sys/class/input/input3/filter_enable
-chown system.input /sys/class/input/input3/offset
+chown system.input /sys/class/input/input3/filter_len
+chown system.input /sys/class/input/input3/filter_noise
+chown system.input /sys/class/input/input3/filter_threshold
 chown system.input /sys/class/input/input3/position
 chown system.input /sys/class/input/input3/threshold
 chown system.input /sys/class/input/input3/wake
 
-# geomagnetic
-chown system.input /sys/class/input/input0/enable
-chown system.input /sys/class/input/input0/delay
-chown system.input /sys/class/input/input0/wake
-chown system.input /sys/class/input/input1/enable
-chown system.input /sys/class/input/input1/delay
-chown system.input /sys/class/input/input1/wake
-chown system.input /sys/class/input/input2/enable
-chown system.input /sys/class/input/input2/delay
-chown system.input /sys/class/input/input2/wake
-chown system.input /sys/class/input/input3/enable
-chown system.input /sys/class/input/input3/delay
-chown system.input /sys/class/input/input3/wake
-chown system.input /sys/class/input/input4/enable
-chown system.input /sys/class/input/input4/delay
-chown system.input /sys/class/input/input4/wake
-chown system.input /sys/class/input/input5/enable
+# geomagnetic raw /devices/i2c-12/12-002e/input/input4
+chown system.input /sys/class/input/input4/distortion
+chown system.input /sys/class/input/input4/dynamic_matrix
+chown system.input /sys/class/input/input4/ellipsoid_mode
+chown system.input /sys/class/input/input4/offsets
+chown system.input /sys/class/input/input4/shape
+chown system.input /sys/class/input/input4/static_matrix
+chown system.input /sys/class/input/input4/threshold
+
+# orientation verified
+chown system.input /sys/class/input/input5/data
 chown system.input /sys/class/input/input5/delay
+chown system.input /sys/class/input/input5/enable
 chown system.input /sys/class/input/input5/wake
+
+# proximity verified 
 chown system.input /sys/class/input/input6/enable
-chown system.input /sys/class/input/input6/poll_delay
-chown system.input /sys/class/input/input6/wake
-chown compass.input /sys/class/input/input1/offsets
-chown compass.input /sys/class/input/input1/dynamic_matrix
-chown compass.input /sys/class/input/input2/offsets
-chown compass.input /sys/class/input/input2/dynamic_matrix
-chown compass.input /sys/class/input/input3/offsets
-chown compass.input /sys/class/input/input3/dynamic_matrix
-chown compass.input /sys/class/input/input4/offsets
-chown compass.input /sys/class/input/input4/dynamic_matrix
+
+# light sensor verified
+chown system.input /sys/class/input/input7/enable
+chown system.input /sys/class/input/input7/poll_delay
 
 # i2c
 chown system.system /dev/i2c-12
@@ -47,4 +55,4 @@ chmod 0666 /dev/i2c-12
 
 # compass
 echo 0 > /sys/class/input/input3/ellipsoid_mode 1
-echo "9063 1357 -178 519 10956 95 -1384 880 10100" > /sys/class/input/input3/static_matrix 
+echo "9063 1357 -178 519 10956 95 -1384 880 10100" > /sys/class/input/input4/static_matrix 
